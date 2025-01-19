@@ -32,8 +32,8 @@ fn quicksort(comptime T: type, allocator: mem.Allocator, s: []const T) anyerror!
         }
     }
 
-    var low = try quicksort(T, allocator, lower.items);
-    var high = try quicksort(T, allocator, higher.items);
+    const low = try quicksort(T, allocator, lower.items);
+    const high = try quicksort(T, allocator, higher.items);
 
     var res = std.ArrayList(T).init(allocator);
     try res.appendSlice(low);
@@ -44,13 +44,8 @@ fn quicksort(comptime T: type, allocator: mem.Allocator, s: []const T) anyerror!
 }
 
 test "quicksort" {
-    var gpa = heap.GeneralPurposeAllocator(.{}){};
-    var arena = heap.ArenaAllocator.init(gpa.allocator());
-    defer {
-        arena.deinit();
-        const leaked = gpa.deinit();
-        if (leaked) std.testing.expect(false) catch @panic("TEST FAIL"); //fail test; can't try in defer as defer is executed after we return
-    }
+    var arena = heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena.deinit();
 
     const tests = [_]struct {
         s: []const u8,
@@ -71,9 +66,9 @@ test "quicksort" {
     };
 
     for (tests) |t| {
-        var res = try quicksort(u8, arena.allocator(), t.s);
+        const res = try quicksort(u8, arena.allocator(), t.s);
         try expect(res.len == t.exp.len);
-        for (res) |e, i|
+        for (res, 0..) |e, i|
             try expect(e == t.exp[i]);
     }
 }

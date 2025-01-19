@@ -14,6 +14,19 @@ This repository contains every image in Grokking Algorithms in high resolution. 
 
 ## Contributing
 
-- The examples in this book are written in Python, but I'd like examples in Ruby, JavaScript, C, and other languages too. Please add examples in other languages!
-- Pull request are the quickest way to contribute to this repository but unfortunately I am not as responsive to them as I'd like to be. I'll get to them but it might take a while!
-- This repo is for easy to read examples. So even though I love well tested, optimized code, I won't be merging PRs related to tests or optimization, since those will increase cognitive load for readers.
+Thanks for wanting to contribute to this repo!
+
+If you have found a mistake in the book or have a question, please email me as that will be the best way to get a response. My email is listed on my website, adit.io.
+If you would like to make a change, please go ahead and open a PR with your suggested change. I am quicker at responding to those than I am to issues.
+
+It takes me a long time to respond to PRs. It's something I'm trying to get better at, but I apologize in advance for how long it will take. I will eventually get to it.
+
+The contributions that are most useful are:
+- fixing errors in existing code
+- adding examples to new languages
+- modernizing code as the language evolves
+- making code easier to read.
+
+I'm less likely to merge code that involves stylistic changes, and I'm very unlikely to merge PRs that add complex optimizations, as the main purpose of this repo is to have easy to read examples that help people understand concepts.
+
+Thanks for contributing and I hope you're enjoying the book!
