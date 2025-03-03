@@ -1,3 +1,5 @@
+modeul app;
+
 import std;
 
 class Item {

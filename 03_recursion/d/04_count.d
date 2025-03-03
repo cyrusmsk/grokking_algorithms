@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 int count(T[] arr) {

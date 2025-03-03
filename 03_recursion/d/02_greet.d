@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 void greet2(string name) {

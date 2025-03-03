@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 T rec_count(T[] list) {

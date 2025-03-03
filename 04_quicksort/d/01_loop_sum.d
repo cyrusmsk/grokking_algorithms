@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 T loop_sum(T[] arr) {

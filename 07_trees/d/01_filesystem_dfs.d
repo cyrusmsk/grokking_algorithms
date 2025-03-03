@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 void printnames(string dir)

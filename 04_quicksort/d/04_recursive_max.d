@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 T rec_max(T)(T[] list) {

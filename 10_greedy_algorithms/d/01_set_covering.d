@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 alias Set = bool[string];

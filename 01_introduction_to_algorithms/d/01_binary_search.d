@@ -1,4 +1,4 @@
-module binary_search;
+module app;
 
 import std.stdio: writeln;
 import std.range: assumeSorted, SortedRange;

@@ -1,4 +1,4 @@
-module selection_sort;
+module app;
 
 import std.stdio: writeln;
 import std.algorithm: minIndex, remove;

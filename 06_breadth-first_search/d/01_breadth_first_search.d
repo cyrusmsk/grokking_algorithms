@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 bool personIsSeller(string name) {

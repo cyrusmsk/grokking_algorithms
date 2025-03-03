@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 T rec_sum(T[] list) {

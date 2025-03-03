@@ -1,3 +1,5 @@
+module app;
+
 import std;
 
 int binary_search(T)(T[] arr, T target) {
