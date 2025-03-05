@@ -2,17 +2,17 @@ module app;
 
 import std;
 
-alias DpTable = int[][];
+alias DpTable = ulong[][];
 
 DpTable longest_common_substring(T)(T[] table1, T[] table2)
 {
     DpTable dp_table = new DpTable(table1.length, table2.length);
 
-    foreach(int i, c1; table1)
-        foreach(int j, c2; table2)
+    foreach(i, c1; table1)
+        foreach(j, c2; table2)
         {
             if (c1 == c2)
-                dp_table[i][j] = dp_table[max(i-1,0)][max(j-1,0)] + 1;
+                dp_table[i][j] = dp_table[i > 0 ? i - 1 : 0][j > 0 ? j - 1 : 0] + 1;
             else
                 dp_table[i][j] = 0;
         }
@@ -24,15 +24,15 @@ DpTable longest_common_subsequence(T)(T[] table1, T[] table2)
 {
     DpTable dp_table = new DpTable(table1.length, table2.length);
 
-    foreach(int i, c1; table1)
-        foreach(int j, c2; table2)
+    foreach(i, c1; table1)
+        foreach(j, c2; table2)
         {
             if (c1 == c2)
-                dp_table[i][j] = dp_table[max(i-1,0)][max(j-1,0)] + 1;
+                dp_table[i][j] = dp_table[i > 0 ? i-1 : 0][j > 0 ? j-1 : 0] + 1;
             else
             {
-                dp_table[i][j] = max(dp_table[max(i-1,0)][j],
-                                     dp_table[i][max(j-1,0)]);
+                dp_table[i][j] = max(dp_table[i > 0 ? i-1 : 0][j],
+                                     dp_table[i][j > 0 ? j-1 : 0]);
             }
         }
     return dp_table;
